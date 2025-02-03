@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://easyb5jeep6t"]
+
+[ext_resource type="Texture2D" uid="uid://kouqhtjjp5h2" path="res://button/button_sprite.png" id="1_4n0b5"]
+[ext_resource type="Script" path="res://button/button.gd" id="2_mpj4l"]
+[ext_resource type="AudioStream" uid="uid://bnfk8lbe22pxg" path="res://button/button_click.ogg" id="3_urosh"]
+[ext_resource type="AudioStream" uid="uid://c1a81p7cke3ge" path="res://button/button_released.ogg" id="4_whxcq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7r8b"]
+atlas = ExtResource("1_4n0b5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4yw3q"]
+atlas = ExtResource("1_4n0b5")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6so0"]
+atlas = ExtResource("1_4n0b5")
+region = Rect2(16, 0, 16, 16)
+
+[node name="button" type="TextureButton"]
+offset_right = 16.0
+offset_bottom = 16.0
+texture_normal = SubResource("AtlasTexture_g7r8b")
+texture_pressed = SubResource("AtlasTexture_4yw3q")
+texture_hover = SubResource("AtlasTexture_e6so0")
+stretch_mode = 3
+script = ExtResource("2_mpj4l")
+button_click_audio = ExtResource("3_urosh")
+button_released_audio = ExtResource("4_whxcq")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

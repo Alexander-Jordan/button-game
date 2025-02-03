@@ -1,0 +1,39 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Button Game"
+run/main_scene="res://main.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/image="res://resources/splash_screen.png"
+boot_splash/use_filter=false
+config/icon="res://resources/button_icon.png"
+boot_splash/minimum_display_time=3000
+
+[autoload]
+
+GameManager="*res://managers/game_manager.gd"
+
+[display]
+
+window/size/viewport_width=128
+window/size/viewport_height=128
+window/size/window_width_override=1024
+window/size/window_height_override=1024
+window/stretch/mode="viewport"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.0752548, 0.11195, 0.173161, 1)

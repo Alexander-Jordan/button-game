@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://byp0t7mtus3mw"]
+
+[ext_resource type="Texture2D" uid="uid://skp5ou1llawe" path="res://challenges/reaction/light/light_sprite.png" id="1_svpxn"]
+[ext_resource type="Script" path="res://challenges/reaction/light/light.gd" id="2_ga4d3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03jrh"]
+atlas = ExtResource("1_svpxn")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lstw8"]
+atlas = ExtResource("1_svpxn")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fv8nr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03jrh")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lstw8")
+}],
+"loop": true,
+"name": &"on",
+"speed": 5.0
+}]
+
+[node name="Light" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_fv8nr")
+animation = &"on"
+script = ExtResource("2_ga4d3")
+
+[node name="Timer" type="Timer" parent="."]

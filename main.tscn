@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfn6h8cxn5hug"]
+
+[ext_resource type="Texture2D" uid="uid://cs31wdxo18d2a" path="res://challenges/reaction/box_sprite.png" id="1_5inkl"]
+[ext_resource type="PackedScene" uid="uid://byp0t7mtus3mw" path="res://challenges/reaction/light/light.tscn" id="3_2xk60"]
+[ext_resource type="PackedScene" uid="uid://dglsg8y6rec4x" path="res://ui/ui.tscn" id="3_d2ga8"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(64, 64)
+texture = ExtResource("1_5inkl")
+
+[node name="Light" parent="." instance=ExtResource("3_2xk60")]
+position = Vector2(64, 56)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("3_d2ga8")]
