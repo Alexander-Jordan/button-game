@@ -6,7 +6,7 @@ extends TextureButton
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 func _ready() -> void:
-	button_down.connect(func(): GameManager.button_down.emit(); audio_stream_player.stream = button_click_audio; audio_stream_player.play())
-	button_up.connect(func(): GameManager.button_up.emit(); audio_stream_player.stream = button_released_audio; audio_stream_player.play())
-	pressed.connect(func(): GameManager.pressed.emit())
-	toggled.connect(func(toggled_on: bool): GameManager.toggled.emit(toggled_on))
+	button_down.connect(func(): GameManager.on_button_down(); audio_stream_player.stream = button_click_audio; audio_stream_player.play())
+	button_up.connect(func(): GameManager.on_button_up(); audio_stream_player.stream = button_released_audio; audio_stream_player.play())
+	pressed.connect(func(): GameManager.on_pressed())
+	toggled.connect(func(toggled_on: bool): GameManager.on_toggled(toggled_on))
